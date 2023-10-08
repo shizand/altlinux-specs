@@ -4,14 +4,18 @@
 
 Name: statapp
 Version: 0.5.0
-Release: alt1
+Release: alt2
+Vendor: Shizand
 
 Summary: Automated software for statistical analysis and regression modeling
 Summary(ru_RU.UTF-8): Автоматизированное программное средство по статистическому анализу и регрессионному моделированию.
 License: GPL-3.0
-Group: Development/Python3
+Group: Sciences/Mathematics
 Url: https://github.com/shizand/statapp
+
+# Source-url: https://github.com/shizand/statapp/archive/refs/tags/v%version.tar.gz
 Source: %pypi_name-%version.tar
+Source1: statapp
 
 BuildArch: noarch
 
@@ -43,6 +47,7 @@ STAT.exe (Produced by Reutov V.N., Donetsk University, 1990)
 
 %install
 %pyproject_install
+install -m755 -D %SOURCE1 %buildroot%_bindir/statapp
 
 %check
 #%%tox_create_default_config
@@ -50,10 +55,14 @@ STAT.exe (Produced by Reutov V.N., Donetsk University, 1990)
 
 %files
 %doc *.md
+%_bindir/statapp
 %python3_sitelibdir_noarch/%pypi_name/
 %python3_sitelibdir_noarch/%{pyproject_distinfo %pypi_name}
 %exclude %python3_sitelibdir_noarch/%pypi_name/**/*.ui
 
 %changelog
+* Sun Oct 08 2023 Maxim Slipenko <maxim@slipenko.com> 0.5.0-alt2
+- Add /usr/bin/statapp
+
 * Sat Oct 08 2023 Maxim Slipenko <maxim@slipenko.com> 0.5.0-alt1
 - Initial build
