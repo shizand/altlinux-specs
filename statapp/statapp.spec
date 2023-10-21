@@ -3,8 +3,8 @@
 %def_without check
 
 Name: statapp
-Version: 0.5.0
-Release: alt2
+Version: 0.6.0
+Release: alt1
 Vendor: Shizand
 
 Summary: Automated software for statistical analysis and regression modeling
@@ -61,6 +61,9 @@ install -m755 -D %SOURCE1 %buildroot%_bindir/statapp
 %exclude %python3_sitelibdir_noarch/%pypi_name/**/*.ui
 
 %changelog
+* Sat Oct 21 2023 Maxim Slipenko <maxim@slipenko.com> 0.6.0-alt1
+- new version
+
 * Sun Oct 08 2023 Maxim Slipenko <maxim@slipenko.com> 0.5.0-alt2
 - Add /usr/bin/statapp
 
