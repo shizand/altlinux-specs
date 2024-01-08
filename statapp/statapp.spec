@@ -3,7 +3,7 @@
 %def_without check
 
 Name: statapp
-Version: 0.6.0
+Version: 0.10.0
 Release: alt1
 Vendor: Shizand
 
@@ -12,14 +12,14 @@ Summary(ru_RU.UTF-8): Автоматизированное программно�
 License: GPL-3.0
 Group: Sciences/Mathematics
 Url: https://github.com/shizand/statapp
-
+Packager: Maxim Slipenko <maxim@slipenko.com>
 # Source-url: https://github.com/shizand/statapp/archive/refs/tags/v%version.tar.gz
 Source: %pypi_name-%version.tar
 Source1: statapp
 
 BuildArch: noarch
 
-Packager: Maxim Slipenko <maxim@slipenko.com>
+
 
 BuildRequires(pre): rpm-build-python3
 BuildRequires: python3-devel python3-module-setuptools python3-module-wheel
@@ -33,8 +33,8 @@ STAT.exe (Produced by Reutov V.N., Donetsk University, 1990)
 Developed by two students of the DonNTU for their university.
 
 %description -l ru_RU.UTF8
-Автоматизированное программное средство по статистическому анализу 
-и регрессионному моделированию. Является идейным продолжателем программы 
+Автоматизированное программное средство по статистическому анализу
+и регрессионному моделированию. Является идейным продолжателем программы
 STAT.exe (Produced by Reutov V.N., Donetsk University, 1990)
 
 Разработано двумя студентами ФГБОУ ВО «ДонНТУ» для своего университета.
@@ -61,6 +61,9 @@ install -m755 -D %SOURCE1 %buildroot%_bindir/statapp
 %exclude %python3_sitelibdir_noarch/%pypi_name/**/*.ui
 
 %changelog
+* Mon Jan 08 2024 Maxim Slipenko <maxim@slipenko.com> 0.10.0-alt1
+- new version
+
 * Sat Oct 21 2023 Maxim Slipenko <maxim@slipenko.com> 0.6.0-alt1
 - new version
 
